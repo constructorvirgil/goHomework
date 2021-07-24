@@ -18,7 +18,7 @@ type Data struct {
 func Select(db *sql.DB) (Data, error) {
 	var sqlStr = `select id,user_name from tab where id=?`
 	var arg = 101
-	var errCtx = fmt.Sprintf("ctx: sql=%v|arg=%v", sqlStr, arg)
+	var errCtx = fmt.Sprintf("sqlStr=%v|arg=%v", sqlStr, arg)
 
 	stmt, err := db.Prepare(sqlStr)
 	if err != nil {
